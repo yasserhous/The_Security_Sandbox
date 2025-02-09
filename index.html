@@ -1,1 +1,244 @@
-<h1>Welcome To the Security Sandbox</h1>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Security Sandbox</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            background-color: #121212;
+            color: #f0f0f0;
+        }
+
+        header {
+            background: #1f1f1f;
+            color: #fff;
+            padding: 20px 0;
+            text-align: center;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+        }
+
+        nav ul li {
+            margin: 0 15px;
+        }
+
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 18px;
+            transition: color 0.3s ease;
+        }
+
+        nav ul li a:hover {
+            color: #00bcd4;
+        }
+
+        .hero {
+            height: 100vh;
+            background: url('https://via.placeholder.com/1500x800') no-repeat center center/cover;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: #fff;
+            padding: 0 20px;
+        }
+
+        .hero h1 {
+            font-size: 4rem;
+            margin-bottom: 20px;
+        }
+
+        .hero p {
+            font-size: 1.5rem;
+        }
+
+        section {
+            padding: 80px 20px;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .projects {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+        }
+
+        .project {
+            background: #1f1f1f;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+            transition: transform 0.3s ease;
+        }
+
+        .project:hover {
+            transform: translateY(-10px);
+        }
+
+        .project img {
+            width: 100%;
+            border-radius: 8px;
+        }
+
+        .project h3 {
+            margin: 15px 0 10px;
+        }
+
+        .project a {
+            color: #00bcd4;
+            text-decoration: none;
+        }
+
+        .project a:hover {
+            text-decoration: underline;
+        }
+
+        .code-snippet {
+            background: #272727;
+            padding: 20px;
+            border-radius: 8px;
+            overflow-x: auto;
+            margin-top: 20px;
+            font-family: 'Courier New', Courier, monospace;
+        }
+
+        footer {
+            background: #1f1f1f;
+            color: #fff;
+            text-align: center;
+            padding: 20px 0;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+        }
+
+        .scroll-to-top {
+            position: fixed;
+            bottom: 50px;
+            right: 20px;
+            background: #00bcd4;
+            color: #fff;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 50%;
+            cursor: pointer;
+            display: none;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#code">Code Snippets</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="hero" id="home">
+        <div>
+            <h1>The Security Sandbox</h1>
+            <p>Exploring Cybersecurity Through Code and Analysis</p>
+        </div>
+    </section>
+
+    <section id="projects">
+        <h2>Projects</h2>
+        <div class="projects">
+            <div class="project">
+                <img src="https://via.placeholder.com/400x200" alt="Project Image">
+                <h3>Packet Sniffer</h3>
+                <p>A Python-based tool for capturing and analyzing network traffic.</p>
+                <a href="https://github.com/yourusername/packet-sniffer" target="_blank">View on GitHub</a>
+            </div>
+            <div class="project">
+                <img src="https://via.placeholder.com/400x200" alt="Project Image">
+                <h3>Malware Analysis Lab</h3>
+                <p>A virtual lab setup to analyze and dissect malware samples.</p>
+                <a href="https://github.com/yourusername/malware-analysis-lab" target="_blank">View on GitHub</a>
+            </div>
+        </div>
+    </section>
+
+    <section id="code">
+        <h2>Code Snippets</h2>
+        <div class="code-snippet">
+            <pre><code># Example Python Code for Network Traffic Analysis
+import socket
+
+s = socket.socket(socket.AF_INET, socket.SOCK_RAW, socket.IPPROTO_IP)
+s.bind(("192.168.1.1", 0))
+s.setsockopt(socket.IPPROTO_IP, socket.IP_HDRINCL, 1)
+
+print("Listening for packets...")
+while True:
+    print(s.recvfrom(65565))</code></pre>
+        </div>
+    </section>
+
+    <section id="contact">
+        <h2>Contact</h2>
+        <p>Email: yourname@example.com</p>
+        <p>LinkedIn: <a href="https://www.linkedin.com/in/yourprofile" target="_blank">Your LinkedIn</a></p>
+    </section>
+
+    <button class="scroll-to-top" onclick="scrollToTop()">&#8679;</button>
+
+    <footer>
+        <p>&copy; 2025 The Security Sandbox | All Rights Reserved</p>
+    </footer>
+
+    <script>
+        // Scroll-to-top button functionality
+        window.onscroll = function () {
+            const scrollBtn = document.querySelector('.scroll-to-top');
+            if (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200) {
+                scrollBtn.style.display = "block";
+            } else {
+                scrollBtn.style.display = "none";
+            }
+        };
+
+        function scrollToTop() {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('nav a').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+</body>
+
+</html>
