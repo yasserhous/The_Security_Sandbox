@@ -190,15 +190,14 @@
         <h2>Code Snippets</h2>
         <div class="code-snippet">
             <pre><code># Example Python Code for Network Traffic Analysis
-import socket
+def main():
+    output_file = r'C:\Cyber\projects\captured_packets.pcap'
+    print("Starting packet sniffer. Packets will be saved to " + output_file)
 
-s = socket.socket(socket.AF_INET, socket.SOCK_RAW, socket.IPPROTO_IP)
-s.bind(("192.168.1.1", 0))
-s.setsockopt(socket.IPPROTO_IP, socket.IP_HDRINCL, 1)
-
-print("Listening for packets...")
-while True:
-    print(s.recvfrom(65565))</code></pre>
+    # Start sniffing in a separate thread
+    sniff_thread = threading.Thread(target=sniff_packets)
+    sniff_thread.daemon = True  # Ensure the thread exits when the main program exits
+    sniff_thread.start()</code></pre>
         </div>
     </section>
 
